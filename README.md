@@ -1,8 +1,9 @@
 # FRACTURE
 Where breaking makes it more beautiful.
 
-> **System Collapse Hackathon Submission**  
-> *"Build something that gets more interesting when it starts to break"*
+
+ > [**Try Demo**](https://fracture-canvas.vercel.app)  
+
 
 ## The System That Learns to Break
 
@@ -91,25 +92,6 @@ This isn't random noise. It's **controlled collapse**:
 
 ---
 
-## 🚀 Quick Start
-
-### Installation
-
-```bash
-npm install
-npm run dev
-```
-
-Then open `http://localhost:3000`
-
-### Setup OpenAI API
-
-1. Create a `.env.local` file in the root directory
-2. Add your OpenAI API key:
-   ```
-   OPENAI_API_KEY=sk-your-api-key-here
-   ```
-3. The system uses GPT-4 to generate physics rules
 
 ### First Steps
 
@@ -143,7 +125,7 @@ Then open `http://localhost:3000`
 6. **Exit Draw Mode**: Click button again to return to view mode
 
 ### Breaking System
-- **What Breaks**: Any closed shapes you draw become particle structures
+- **What Breaks**: Any shape you draw become particle structures
 - **Particle Creation**: Each segment generates multiple particles
 - **Color Inheritance**: Particles inherit the color you drew with
 - **Physics Application**: Breaking particles immediately follow AI rules
@@ -274,27 +256,7 @@ lib/
 - **Particle Inheritance**: Breaking particles inherit drawing color
 - **8 Neon Presets**: Cyan, purple, pink, orange, lime, blue, magenta, yellow
 
----
 
-## 🐛 Troubleshooting
-
-### AI Generation Issues
-- **Slow Generation**: Normal 5-10 seconds, check internet connection
-- **"No API Key"**: Add `OPENAI_API_KEY` to `.env.local`
-- **Fallback Rules**: System uses randomized fallback if AI fails
-- **JSON Parse Errors**: Fallback system prevents crashes
-
-### Canvas Issues
-- **Particles Not Appearing**: Check browser console, refresh page
-- **Drawing Not Working**: Make sure you're in draw mode (button shows "👁️ View")
-- **Colors Invalid**: Engine validates and fallbacks to cyan if needed
-- **Performance Slow**: Reduce particle count, close other tabs
-
-### Auto-Evolution Issues
-- **Not Triggering**: Check progress bar, ensure threshold is reachable
-- **Triggers Too Early**: Increase threshold slider (500-3000)
-- **Triggers Too Late**: Decrease threshold slider
-- **Accurate Counting**: System counts actual particles created (fixed from estimation)
 
 ---
 
@@ -353,32 +315,9 @@ particleCount: 100            // Initial particles
 entropyGrowthRate: 0.001     // Chaos accumulation
 ```
 
----
 
-## 🚧 Known Limitations
 
-- **API Required**: Needs OpenAI API key for rule generation (fallback available)
-- **Browser Only**: Requires modern browser with canvas support
-- **Performance**: High particle counts (>500) may impact framerate
-- **Mobile**: Best experience on desktop, mobile support basic
 
----
-
-## 🎥 Demo Submission
-
-**Live Demo**: [Deploy on Vercel/Netlify before submission]  
-**Video Walkthrough**: [2-3 minute demo showing controlled collapse in action]  
-**Source Code**: [GitHub repository link]
-
-### Video Content (2-3 Minutes):
-1. **Draw ordered structure** (circle/triangle)
-2. **Watch particles break** and follow physics
-3. **Show entropy rising** (0% → 100%)
-4. **Demonstrate emergent patterns** (spiral, vortex, cascade)
-5. **Trigger collapse event** (auto-evolution at threshold)
-6. **New rules generate** (different forces/colors)
-7. **Show rule details** in sidebar
-8. **Highlight feedback loops** (particles affecting each other)
 
 ---
 
@@ -397,91 +336,9 @@ entropyGrowthRate: 0.001     // Chaos accumulation
 ✅ **Surprises Creator** — AI-generated rules produce unpredictable outcomes  
 ✅ **Evidence of Iteration** — Optimized temperature, tokens, particle counting, UI polish
 
-### Judging Criteria Alignment
-
-**Creativity & Expression (30%)**:
-- ✨ Originality: AI-driven physics evolution is unique approach
-- ✨ Aesthetic Impact: Neon particles with glow effects, gradient UI
-- ✨ Memorability: Watching ordered drawings collapse into chaos is visceral
-- ✨ Risk-Taking: Combined drawing interface + AI + particle physics
-
-**Technical Execution (40%)**:
-- ⚙️ Performance: 60fps canvas rendering, optimized particle calculations
-- ⚙️ Code Quality: TypeScript, proper error handling, color validation
-- ⚙️ Optimization: Reduced AI tokens (1500→800), accurate particle counting
-- ⚙️ Tools: Next.js, OpenAI API, Canvas API, proper architecture
-
-**System Design (30%)**:
-- 🎯 Rule Clarity: Forces calculated with precise formulas (attraction/repulsion)
-- 🎯 Order/Chaos Interaction: Drawing (order) → Breaking (transition) → Particles (chaos)
-- 🎯 Conceptual Depth: Entropy as measurable chaos, AI as adaptive intelligence
-- 🎯 Cross-Domain: Generative art + physics simulation + AI + interactive drawing
 
 ---
 
-## 📜 License & Credits
-
----
-
-## File Structure
-
-```
-/components
-  ├─ canvas-engine.ts              # Core physics engine
-  ├─ interactive-canvas.tsx        # Main canvas + drawing UI
-  ├─ drawing-toolbar.tsx           # Drawing controls
-  ├─ drawing-utils.ts              # Drawing functions
-  ├─ rules-display.tsx             # Rules panel
-  ├─ control-panel.tsx             # Control UI
-  └─ system-monitor.tsx            # Stats display
-
-/app
-  ├─ api/
-  │  ├─ generate-rules/route.ts    # OpenAI rule generation
-  │  └─ analyze-state/route.ts     # OpenAI state analysis
-  ├─ layout.tsx                    # Root layout
-  ├─ globals.css                   # Dark theme + animations
-  └─ page.tsx                      # Main page
-
-/docs
-  ├─ MASTER_GUIDE.md               # Complete guide
-  ├─ DRAWING_QUICK_REFERENCE.md    # 2-min drawing intro
-  ├─ DRAWING_GUIDE.md              # Full drawing manual
-  ├─ DRAWING_FEATURE.md            # Tech details
-  ├─ EMERGENT_CANVAS_README.md     # Feature overview
-  ├─ FEATURES_AT_A_GLANCE.md       # Visual summary
-  ├─ ARCHITECTURE.md               # System design
-  ├─ API_DOCUMENTATION.md          # API reference
-  ├─ PROJECT_SUMMARY.md            # Complete breakdown
-  ├─ QUICKSTART.md                 # Setup guide
-  └─ INDEX.md                      # Documentation index
-```
-
----
-
-## Technology Stack
-
-- **Framework**: Next.js 15 (App Router)
-- **Frontend**: React 19, TypeScript
-- **AI**: OpenAI GPT-4 via AI SDK 6
-- **Rendering**: HTML5 Canvas 2D
-- **Styling**: Tailwind CSS v4
-- **Animation**: RequestAnimationFrame (60fps target)
-
----
-
-## Color Palette
-
-```
-Primary:   Cyan (#06b6d4) - Bright, cool highlights
-Secondary: Purple (#8b5cf6) - Deep, moody accents
-Accent 1:  Pink (#ec4899) - Vibrant energy
-Accent 2:  Orange (#f97316) - Warm tones
-Accent 3:  Green (#10b981) - Natural balance
-Background: Deep Navy (#0a0e27) - Dark, immersive
-```
-
----
 
 ## Creative Workflows
 
@@ -502,41 +359,9 @@ Freeze particles, draw on them, resume for interaction
 
 ---
 
-## Performance
 
-- **Frame Rate**: 60 fps target (55-60 typical)
-- **Particles**: 80-150 concurrent
-- **Rule Generation**: ~1.5-2s via OpenAI
-- **Input Latency**: ~10ms
-- **Memory**: ~30MB typical
 
----
 
-## Browser Support
-
-- ✅ Chrome/Edge 90+
-- ✅ Firefox 88+
-- ✅ Safari 15+
-- ✅ Mobile browsers (coming soon)
-
----
-
-## Documentation Guide
-
-**Choose your path:**
-
-| Goal | Read This | Time |
-|------|-----------|------|
-| I want to use it now | MASTER_GUIDE.md | 5 min |
-| How do I draw? | DRAWING_QUICK_REFERENCE.md | 2 min |
-| Tell me everything | EMERGENT_CANVAS_README.md | 8 min |
-| I need setup instructions | QUICKSTART.md | 3 min |
-| Show me visually | FEATURES_AT_A_GLANCE.md | 5 min |
-| How does it work technically? | ARCHITECTURE.md | 15 min |
-| What about the APIs? | API_DOCUMENTATION.md | 5 min |
-| Complete project breakdown | PROJECT_SUMMARY.md | 20 min |
-
----
 
 ## Quick Answers
 
@@ -576,70 +401,9 @@ This system is designed for:
 
 There's no wrong way to use it. Paint, evolve, observe, create something beautiful.
 
----
 
-## Showcase Tips
-
-**For impressing others:**
-1. Show them the particles immediately (wow factor)
-2. Click "Evolve Rules" - completely different behavior (mind blown)
-3. Draw something (they realize they can participate)
-4. Pause and draw (they understand the concept)
-5. Resume and show interaction (beautiful moment)
-
-**Total demo time: 2 minutes**
-
----
-
-## Next Steps
-
-1. **Install & run** the project
-2. **Read MASTER_GUIDE.md** for full understanding
-3. **Click "Draw Mode"** and create
-4. **Try different colors and sizes**
-5. **Experiment with workflows**
-6. **Screenshot your favorites**
-7. **Share your creations!**
-
----
-
-## Support & Questions
-
-- **Setup issues**: See QUICKSTART.md
-- **Drawing help**: See DRAWING_GUIDE.md
-- **Technical questions**: See ARCHITECTURE.md
-- **API issues**: See API_DOCUMENTATION.md
-- **General help**: See MASTER_GUIDE.md
-
----
-
-## Credits
-
-**Built with:**
-- OpenAI GPT-4 for AI creativity
-- Next.js for framework
-- React for UI
-- Tailwind CSS for styling
-- AI SDK 6 for smooth integration
-
-**Philosophy:**
-*What if AI could be genuinely creative? Not as a tool, but as an artist?*
-
----
-
-## License & Usage
-
-This system demonstrates innovative use of AI for creative purposes. Feel free to:
-- ✅ Use as-is
-- ✅ Customize colors and parameters
-- ✅ Modify physics rules
-- ✅ Adapt for your own projects
-- ✅ Share your creations
-
----
 
 **Ready to create? Let's go! 🚀**
 
-Open your terminal, run `npm run dev`, and start your artistic journey.
 
 The canvas awaits your creativity. 🎨✨
