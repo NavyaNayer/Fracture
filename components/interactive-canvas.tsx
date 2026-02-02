@@ -10,6 +10,7 @@ import { DrawingToolbar } from './drawing-toolbar' // Import DrawingToolbar
 import type { Point } from './drawing-utils'
 import { Button } from '@/components/ui/button'
 import { getAudioEngine } from './sound-effects'
+import { OnboardingScreen } from './onboarding-screen'
 
 interface CanvasState {
   frameCount: number
@@ -36,6 +37,7 @@ export function InteractiveCanvas() {
     averageEnergy: 0,
   })
   const [isLoading, setIsLoading] = useState(true)
+  const [showOnboarding, setShowOnboarding] = useState(true)
   const [isAutoEvolving, setIsAutoEvolving] = useState(false)
   const [loadingMessageIndex, setLoadingMessageIndex] = useState(0)
   const [iteration, setIteration] = useState(0)
@@ -799,6 +801,11 @@ export function InteractiveCanvas() {
         particleCount={state.particleCount}
         averageEnergy={state.averageEnergy}
       />
+
+      {/* Onboarding Screen */}
+      {showOnboarding && (
+        <OnboardingScreen onComplete={() => setShowOnboarding(false)} />
+      )}
     </div>
   )
 }
